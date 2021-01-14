@@ -7,7 +7,7 @@ Given below is the link for  web app.
 https://assigno-b8431.web.app/
 
 ----------------------------------------------------------------------------
-
+Open this Prototype in 2  different devices with the given below credentials for better experience.
 
 Test Credentials
 
