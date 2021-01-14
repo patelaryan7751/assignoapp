@@ -26,8 +26,8 @@ var hjcordiref= firebase.database().ref(`${sessionStorage.getItem("uidteach")}/$
 
 
 <a  style="display: inline-block" href="${newVoke.link}" class="mt-2 btn btn-success">Open</a>
-<a  style="display: inline-block" href="https://patelaryan7751.github.io/DSC-WOW_CAPITAL-E/assignsubmit.html?assname=${newVoke.assname}" class="mt-2 btn btn-success">Submit</a>
-<a  style="display: inline-block" href="https://patelaryan7751.github.io/DSC-WOW_CAPITAL-E/result.html?assname=${newVoke.assname}&email=${sessionStorage.getItem("emails")}" class="mt-2 btn btn-success">Results</a>
+<a  style="display: inline-block" href="https://assigno-b8431.web.app/assignsubmit.html?assname=${newVoke.assname}" class="mt-2 btn btn-success">Submit</a>
+<a  style="display: inline-block" href="https://assigno-b8431.web.app/result.html?assname=${newVoke.assname}&email=${sessionStorage.getItem("emails")}" class="mt-2 btn btn-success">Results</a>
 
       </div>
     </div>

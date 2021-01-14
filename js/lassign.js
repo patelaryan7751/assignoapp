@@ -27,7 +27,7 @@ var hjcordiref= firebase.database().ref(`${sessionStorage.getItem("uids")}/${ses
 
 
 <a  style="display: inline-block" href="${newVoke.link}" class="mt-2 btn btn-success">Open</a>
-<a  style="display: inline-block" href="https://patelaryan7751.github.io/DSC-WOW_CAPITAL-E/submission.html?assname=${newVoke.assname}" class="mt-2 btn btn-success">Submissions</a>
+<a  style="display: inline-block" href="https://assigno-b8431.web.app/submission.html?assname=${newVoke.assname}" class="mt-2 btn btn-success">Submissions</a>
 
       </div>
     </div>

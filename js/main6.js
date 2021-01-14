@@ -83,7 +83,7 @@ var roomname =url.searchParams.get("roomname");
         var ukref= firebase.database().ref(`${sessionStorage.getItem("uids")}/${roomname}`);
     var data={
         roomname:roomname,
-        link:`https://patelaryan7751.github.io/DSC-WOW_CAPITAL-E/studass.html?uid=${uid}&roomname=${roomname}`
+        link:`https://assigno-b8431.web.app/studass.html?uid=${uid}&roomname=${roomname}`
     }
     ukref.update(data).then(function(data){
                          
