@@ -122,7 +122,7 @@ console.log("fum");
                  'Authorization':'key=AAAA9xHhKfA:APA91bGrzRaoi6RqOk49fGi66kjvGHXh6Dc8vNL89SdCn4WMyGohj3wBNpp1_pFpQgkz0pG7xPhHt130Bpe2x3eQJTw7hzjvLt-3EYQm-w9tZ0CB_UCr05JSWz4-Ls65C2HL9mTHzSvn'
              },
              data:JSON.stringify({
-                'to':data.val().fcmtokenstudent,'data':{'message':`Assignment Evaluated`,'icon':'https://patelaryan7751.github.io/DSC-WOW_CAPITAL-E/images/assigno.png','image':'https://patelaryan7751.github.io/DSC-WOW_CAPITAL-E/images/assigno.png','click_action':`https://patelaryan7751.github.io/DSC-WOW_CAPITAL-E/teachass.html?uid=${sessionStorage.getItem("uids")}&roomname=${sessionStorage.getItem("roomi")}`}
+                'to':data.val().fcmtokenstudent,'data':{'message':`Assignment Evaluated`,'icon':'https://assigno-b8431.web.app/images/assigno.png','image':'https://assigno-b8431.web.app/images/assigno.png','click_action':`https://assigno-b8431.web.app/teachass.html?uid=${sessionStorage.getItem("uids")}&roomname=${sessionStorage.getItem("roomi")}`}
              }),
              success: function(response){
                  console.log(response);
