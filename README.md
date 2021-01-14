@@ -1,4 +1,4 @@
-![ASSIGNO](https://drive.google.com/file/d/1R802d-puLmPgDOXLU_LJqAIR70AkGyjd/view?usp=sharing)
+![ASSIGNO](https://assigno-b8431.web.app/images/assigno.png)
 ---
 Given below is the link for your reference for the idea. the link contains the presentation of our web app.
 __ Link __ https://drive.google.com/file/d/1cWNyK18HuNJd6lc6EC7be-yCKyOe_Huq/view?usp=sharing
@@ -25,7 +25,10 @@ pass: 123456
 
 -------------------------------------------------------------------------------------------------------
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/qGGWaPb2fTU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+Video Demonstration
+
+https://youtu.be/qGGWaPb2fTU
+
 --------------------------------------------------------------------------------------------------------
 
 # Problem Statement 
