@@ -1,0 +1,167 @@
+<html>
+    <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    
+     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap/font-awesome/css/font-awesome.min.css">
+     <link rel="stylesheet" href="bootstrap/bootstrap-social/bootstrap-social.css">
+        <link href="font-awesome/css/font-awesome.min.css">
+    </head>
+    <body>
+    
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#" style="font-size: 1.9em;"><strong>Dashboard</strong></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" id="user" aria-current="page" ></a>
+        </li>
+      </ul>
+      
+
+        <button class="btn btn-outline-danger" style="margin-left: 71%;" id="log" type="button">Logout</button>
+
+    </div>
+      
+  </div>
+</nav>    
+        
+<h1>Teacher</h1>
+<div class="container" style="width: 100%;">
+<div id="messages" class="row"></div>    
+</div>
+<style>
+    body{
+        background: linear-gradient(to right,#74ebd5, #9face6);
+    }
+    .add{
+        position: fixed;
+        z-index: 100;
+        bottom: 50px;
+        right: 50px;
+        background-color: blue;
+        border-radius: 50%;
+        transition: 0.3s ease;
+    } 
+    .add i{
+        padding: 20px;
+        font-size: 30px;
+        color: #000;
+    }
+    .add:hover {
+        background-color: aqua;
+    }
+    #here {
+        position: absolute;
+        background: linear-gradient(#2193b0,#6dd5ed);
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        border-radius: 6px;
+        padding: 30px;
+    }
+    #here input[type=text]{
+        margin: 10px;
+        padding: 10px 16px;
+        box-sizing: border-box;
+        width: 100%;
+    }
+</style>
+    
+<!--add class button        -->
+<div id="addclass" onclick="show()" class="add"><a href="#" title="add class"><i class="fa fa-plus"></i></a></div> 
+<!--create class form-->
+<div id="here" style="display: none;"> 
+<form onsubmit="return sendMessage();" >
+					<span class="login100-form-title">
+					<strong>Enter Class Name</strong>
+					</span>
+
+					<div class="wrap-input100 validate-input">
+						<input class="input100" type="text" id="cls" name="cls" placeholder="Class name" required>
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-" aria-hidden="true"></i>
+						</span>
+					</div>
+                    <div style="width: 100%;display: flex;flex-direction: row; align-items: center;justify-content: center;">
+                    <input style="margin: 5px;" type="submit" value="create class" id="sub">
+                    <button onclick="hide()" style="margin: 5px;" type="button">Cancel</button>
+                    </div>
+    </form>	    
+</div>
+<!--class creation ends-->
+<script>function show(){document.getElementById("here").style.display="block";}
+        function hide(){document.getElementById("here").style.display="none";}
+</script>
+        
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+<script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-database.js"></script>
+    <script src="js/main4.js"></script>
+<script>
+ var uid=sessionStorage.uids;
+function sendMessage() {
+        // get message
+        var date=new Date();
+        var time=date.getHours()+" : "+date.getMinutes();
+        var classname = document.getElementById("cls").value;
+        // save in database
+        firebase.database().ref("messages/"+uid).push().set({
+            "class": classname,
+            "time": time
+        });
+        document.getElementById("cls").value="";
+        document.getElementById("here").style.display="none";
+        // prevent form from submitting
+        return false;
+    }
+// listen for incoming messages
+    console.log("heyheyhey1");
+    firebase.database().ref("messages/"+uid).on("child_added", function (snapshot) {
+        console.log("heyheyhey");
+        var html = "";
+        // give each message a unique ID
+            html += "<div class='col-3' style='margin:20px 0px;padding:30px;border-radius:6px;background-color:#000;color:#fff;margin-right:8px;' id='classname2-" + snapshot.key + "'>";
+        html += snapshot.val().class;
+            html +="<div style='width:100%;display:flex;flex-direction:row'><div style='float:left;'><button class='btn-success'>copy link</button></div><div style='float:left;'>"
+            html += "<i style='cursor:pointer;margin-right:10px;' class='fa fa-trash' data-id='" + snapshot.key + "' onclick='deleteMessage(this);'></i></div></div>";
+        
+//        html += "<span>"+snapshot.val().sender + " :</span> <br>" + snapshot.val().message;
+        html += "</div>";
+//        if (snapshot.val().sender == myName)
+//        {html +="<p style='align-self:flex-end;margin-right:8px;'>"+snapshot.val().time + "</p>";}
+//        else
+//        {html +="<p style='margin-left:5px;'>"+snapshot.val().time + "</p>";}
+        document.getElementById("messages").innerHTML += html;
+    });
+//delete class
+function deleteMessage(self) {
+    // get message ID
+    var messageId = self.getAttribute("data-id");
+ 
+    // delete message
+    firebase.database().ref("messages/"+uid).child(messageId).remove();
+}
+ 
+// attach listener for delete message
+firebase.database().ref("messages/"+uid).on("child_removed", function (snapshot) {
+    // remove message node
+document.getElementById("classname2-" + snapshot.key).innerHTML = "";
+document.getElementById("classname2-" + snapshot.key).style.display = "none";
+});
+</script>
+    </body>
+</html>

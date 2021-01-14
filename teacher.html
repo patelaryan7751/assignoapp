@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="UTF-8">
+
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    
+     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap/font-awesome/css/font-awesome.min.css">
+     <link rel="stylesheet" href="bootstrap/bootstrap-social/bootstrap-social.css">
+    <link rel="stylesheet" type="text/css" href="css/teacher.css">
+   <link rel="stylesheet" type="text/css" href="css/style.css">
+    
+    
+            
+
+        </head>
+    <body>
+
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Dashboard</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" id="user" aria-current="page" ></a>
+        </li>
+      </ul>
+      
+<button class="btn btn-outline-success" id="create" type="button"><i class="fa fa-pencil"></i>  Create</button>
+        <button class="btn btn-outline-danger" style="margin-left: 71%;" id="log" type="button"><i class="fa fa-power-off"></i> Logout</button>
+
+    </div>
+  </div>
+</nav>
+        <br>
+        <div class="container">
+        <h1>Classes</h1>
+            <div class="row" id="classe"></div>
+        
+        
+        
+        </div>
+
+
+           <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+<script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-database.js"></script>
+      
+       <script>
+function myFunction(self) {
+  var copyText = document.getElementById(`myInput${self.getAttribute("data-id")}`);
+  copyText.select();
+  copyText.setSelectionRange(0, 99999);
+  document.execCommand("copy");
+  
+  var tooltip = document.getElementById(`myTooltip${self.getAttribute("data-id")}`);
+  tooltip.innerHTML = "Copied";
+}
+
+function outFunc(self) {
+  var tooltip = document.getElementById(`myTooltip${self.getAttribute("data-id")}`);
+  tooltip.innerHTML = "Copy to clipboard";
+}
+</script>
+        
+         <script src="js/main4.js"></script>
+      
+
+
+    </body>
+</html>
