@@ -4,7 +4,7 @@ Given below is the link for your reference for the idea. the link contains the p
 __ Link __ https://drive.google.com/file/d/1cWNyK18HuNJd6lc6EC7be-yCKyOe_Huq/view?usp=sharing
 ---
 Given below is the link for  web app.
-https://patelaryan7751.github.io/DSC-WOW_CAPITAL-E/
+https://assigno-b8431.web.app/
 
 ----------------------------------------------------------------------------
 
@@ -24,6 +24,9 @@ email: patelaryan7751@gmail.com
 pass: 123456
 
 -------------------------------------------------------------------------------------------------------
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/qGGWaPb2fTU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+--------------------------------------------------------------------------------------------------------
 
 # Problem Statement 
 As we know online education has become part and parcel of our life and assignments are part of it. Submission of assignment via mail and WhatsApp has some problems . Sometimes mail doesn't reaches to teacher's on time and get queued up and deadline crosses. There is no confirmation of submission of these assignments .There is also problem related with the storage of this pdf and soft copies and its evaluation.
